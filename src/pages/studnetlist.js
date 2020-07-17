@@ -19,23 +19,27 @@ class StudentListPage extends Component {
         <Header />
         {this.state.studentList != null ? (
           <>
-            <table>
-              <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
-                <th>City</th>
-              </tr>
-              <tbody>
-                {this.state.studentList.data.map((student) => (
-                  <>
-                    <tr>
-                      <Details student={student} />
-                    </tr>
-                  </>
-                ))}
-              </tbody>
-            </table>
+            <div
+              style={{ marginTop: "30px", marginLeft: "40%", width: "100%" }}
+            >
+              <table>
+                <tr>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                  <th>Email</th>
+                  <th>City</th>
+                </tr>
+                <tbody>
+                  {this.state.studentList.data.map((student) => (
+                    <>
+                      <tr>
+                        <Details student={student} />
+                      </tr>
+                    </>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </>
         ) : null}
 

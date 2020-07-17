@@ -40,57 +40,60 @@ class Mainpage extends Component {
     return (
       <>
         <Header />
-        <input
-          type="text"
-          onChange={this.searchClickevent}
-          placeholder="Search"
-        ></input>
-        <select name="option" id="option">
-          <option value="firstname">FirstName</option>
-          <option value="lastname">LastName</option>
-        </select>
-        {this.state.filteredList === null ? (
-          <>
-            {this.state.clientList != null ? (
-              <>
-                <table>
-                  <tr>
-                    <th>Firstname</th>
-                    <th>Lastname</th>
-                  </tr>
-                  <tbody>
-                    {this.state.clientList.data.map((client) => (
-                      <>
-                        <tr>
-                          <ClientDetails client={client} />
-                        </tr>
-                      </>
-                    ))}
-                  </tbody>
-                </table>
-              </>
-            ) : null}
-          </>
-        ) : (
-          <>
-            <table>
-              <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-              </tr>
-              <tbody>
-                {this.state.filteredList.map((client) => (
-                  <>
+        <div style={{ marginLeft: "40%", marginTop: "10%" }}>
+          <input
+            type="text"
+            onChange={this.searchClickevent}
+            placeholder="Search"
+          ></input>
+          <select name="option" id="option">
+            <option value="firstname">FirstName</option>
+            <option value="lastname">LastName</option>
+          </select>
+        </div>
+        <div style={{ marginLeft: "45%", marginTop: "50px" }}>
+          {this.state.filteredList === null ? (
+            <>
+              {this.state.clientList != null ? (
+                <>
+                  <table>
                     <tr>
-                      <ClientDetails client={client} />
+                      <th>Firstname</th>
+                      <th>Lastname</th>
                     </tr>
-                  </>
-                ))}
-              </tbody>
-            </table>
-          </>
-        )}
-
+                    <tbody>
+                      {this.state.clientList.data.map((client) => (
+                        <>
+                          <tr>
+                            <ClientDetails client={client} />
+                          </tr>
+                        </>
+                      ))}
+                    </tbody>
+                  </table>
+                </>
+              ) : null}
+            </>
+          ) : (
+            <>
+              <table>
+                <tr>
+                  <th>Firstname</th>
+                  <th>Lastname</th>
+                </tr>
+                <tbody>
+                  {this.state.filteredList.map((client) => (
+                    <>
+                      <tr>
+                        <ClientDetails client={client} />
+                      </tr>
+                    </>
+                  ))}
+                </tbody>
+              </table>
+            </>
+          )}
+        </div>
         <Footer />
       </>
     );
