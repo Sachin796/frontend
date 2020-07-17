@@ -31,7 +31,7 @@ class Mainpage extends Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3001/api/clients")
+    fetch("https://codingtest-server.herokuapp.com/api/clients")
       .then((res) => res.json())
       .then((data) => this.setState({ clientList: data }));
   }

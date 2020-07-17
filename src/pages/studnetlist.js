@@ -8,7 +8,7 @@ class StudentListPage extends Component {
   };
 
   componentDidMount() {
-    fetch("http://localhost:3001/api/students")
+    fetch("https://codingtest-server.herokuapp.com/api/students")
       .then((res) => res.json())
       .then((data) => this.setState({ studentList: data }));
   }
